@@ -1,15 +1,18 @@
-# 03-react-movies
+# 04-react-query
 
-A movie search application built with React, TypeScript, and the [TMDB API](https://www.themoviedb.org/).
+A movie search application with pagination, built with React, TypeScript, and the [TMDB API](https://www.themoviedb.org/).
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
 ![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite)
+![TanStack Query](https://img.shields.io/badge/TanStack_Query-5-FF4154?logo=reactquery)
 
 ## Features
 
 - Search movies by keyword using the TMDB API
 - Responsive movie grid with poster images
+- Pagination powered by React Paginate
+- Server state management with TanStack Query
 - Modal with full movie details — backdrop image, overview, release date, and rating
 - Modal closes on close button click, `ESC` key, or outside click
 - Toast notifications for empty search query or no results found
@@ -17,14 +20,16 @@ A movie search application built with React, TypeScript, and the [TMDB API](http
 
 ## Tech Stack
 
-| Tool | Purpose |
-|------|---------|
-| React 18 | UI library |
-| TypeScript | Type safety |
-| Vite | Build tool |
-| Axios | HTTP requests |
-| React Hot Toast | Toast notifications |
-| CSS Modules | Component scoped styles |
+| Tool             | Purpose                   |
+| ---------------- | ------------------------- |
+| React 18         | UI library                |
+| TypeScript       | Type safety               |
+| Vite             | Build tool                |
+| TanStack Query   | Server state management   |
+| Axios            | HTTP requests             |
+| React Paginate   | Pagination UI             |
+| React Hot Toast  | Toast notifications       |
+| CSS Modules      | Component scoped styles   |
 | Modern Normalize | Cross-browser style reset |
 
 ## Getting Started
@@ -32,8 +37,8 @@ A movie search application built with React, TypeScript, and the [TMDB API](http
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/03-react-movies
-cd 03-react-movies
+git clone https://github.com/your-username/04-react-query
+cd 04-react-query
 ```
 
 ### 2. Install dependencies
@@ -98,10 +103,10 @@ npm run preview  # Preview production build
 
 ## Environment Variables
 
-| Variable | Description |
-|----------|-------------|
+| Variable            | Description                         |
+| ------------------- | ----------------------------------- |
 | `VITE_TMDB_TOKEN` | TMDB API Read Access Token (Bearer) |
 
 ## Live Demo
 
-[View on Vercel](#) https://03-react-movies-wine-rho.vercel.app/
+[View on Vercel](#) `<!-- replace with your Vercel URL -->`
