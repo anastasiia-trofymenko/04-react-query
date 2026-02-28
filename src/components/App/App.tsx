@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import css from "./App.module.css";
 import SearchBar from "../SearchBar/SearchBar";
 import { fetchMovies } from "../../services/movieService";
@@ -26,8 +26,11 @@ export default function App() {
   const movies = data?.results ?? [];
   const totalPages = data?.total_pages ?? 0;
 
-  if (data && movies.length == 0 && !isLoading)
-    toast.error("No movies found for your request.");
+  useEffect(() => {
+    if (isSuccess && movies.length === 0) {
+      toast.error("No movies found for your request.");
+    }
+  }, [isSuccess, movies.length]);
 
   const handleSearch = (newQuery: string) => {
     if (newQuery === query) return;
