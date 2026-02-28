@@ -8,7 +8,10 @@ interface MoviesHttpResponse {
   total_pages: number;
 }
 
-export const fetchMovies = async (query: string): Promise<Movie[]> => {
+export const fetchMovies = async (
+  query: string,
+  page: number,
+): Promise<MoviesHttpResponse> => {
   const response = await axios.get<MoviesHttpResponse>(
     "https://api.themoviedb.org/3/search/movie",
     {
@@ -16,12 +19,12 @@ export const fetchMovies = async (query: string): Promise<Movie[]> => {
         query,
         include_adult: false,
         language: "en-US",
-        page: 1,
+        page,
       },
       headers: {
         Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
       },
     },
   );
-  return response.data.results;
+  return response.data;
 };
